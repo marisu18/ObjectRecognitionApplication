@@ -1,0 +1,7 @@
+mysql_connector_repackaged==0.3.1
+numpy==1.22.3
+onnx==1.11.0
+onnxruntime==1.11.0
+opencv_python==4.5.5.64
+pika==1.2.0
+Pillow==9.1.0

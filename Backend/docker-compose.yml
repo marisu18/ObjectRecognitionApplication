@@ -1,0 +1,36 @@
+version: '3.2'
+
+services:
+ db:
+
+  image: marisu18/project2022images:mysql1.0
+  command: --default-authentication-plugin=mysql_native_password
+  restart: always
+  hostname: mysqlService
+  container_name: 'mysqldb'
+  environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: modelsDB
+  ports:
+      - 6603:3306
+  volumes:
+      - "/root/docker/mysqldb/conf.d:/etc/mysql/conf.d"
+      - "/root/docker/mysqldb/my.cnf:/etc/mysql/my.cnf"
+      - "/storage/docker/mysql-data:/var/lib/mysql"
+
+ rabbitmq:
+  hostname: rabbitmqService
+  image: marisu18/project2022images:rabbitmq1.1
+  environment:
+     - RABBITMQ_DEFAULT_USER=root
+     - RABBITMQ_DEFAULT_PASS=root
+  command: rabbitmq-server
+  container_name: 'rabbitmq'
+  ports:
+     - 5671:5671
+     - 5672:5672
+     - 15671:15671
+     - 15672:15672
+  volumes:
+     - ~/.docker-conf/rabbitmq/etc/:/etc/rabbitmq/
+     - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/

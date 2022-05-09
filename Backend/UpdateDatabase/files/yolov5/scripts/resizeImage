@@ -1,0 +1,11 @@
+def resizeImage(image, dim):
+\n\timport cv2
+\n\tHEIGHT, WIDTH = dim[0], dim[1]
+\n\th, w, c = image.shape
+\n\tif w >= h:
+\n\t\tratio = h / w
+\n\t\timage = cv2.resize(image, (WIDTH, int(HEIGHT * ratio)), interpolation=cv2.INTER_AREA)
+\n\telse:
+\n\t\tratio = w / h
+\n\t\timage = cv2.resize(image, (int(WIDTH * ratio), HEIGHT), interpolation=cv2.INTER_AREA)
+\n\treturn image

@@ -1,0 +1,8 @@
+def getMinimumValues(image):
+\n\tmin_width, min_height = 0, 0
+\n\th, w, c = image.shape
+\n\tif h < min_height:
+\n\t\tmin_height = h
+\n\tif w < min_width:
+\n\t\tmin_width = w
+\n\treturn min_width, min_height

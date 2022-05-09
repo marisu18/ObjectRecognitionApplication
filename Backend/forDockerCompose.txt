@@ -1,0 +1,3 @@
+Assuming that the user has both Docker and Docker-compose installed on a UNIX machine like in our application.
+From a UNIX directory containing docker-compose.yml file, running command "docker-compose up -d", this will start
+the container for both MySQL database and RabbitMQ queue system.

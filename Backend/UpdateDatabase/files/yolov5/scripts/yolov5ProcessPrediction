@@ -1,0 +1,13 @@
+def processPrediction(prediction):
+\n\tclass_ids = []
+\n\tconfidences = []
+\n\tfor row in prediction:
+\n\t\tconfidence = row[4]
+\n\t\tif confidence >= 0.4:
+\n\t\t\tclasses_scores = row[5:]
+\n\t\t\tmax_index = np.argmax(classes_scores)
+\n\t\t\tclass_id = max_index
+\n\t\t\tif (classes_scores[class_id] > .25):
+\n\t\t\t\tconfidences.append(confidence)
+\n\t\t\t\tclass_ids.append(class_id)
+\n\treturn class_ids, confidences"

@@ -1,0 +1,8 @@
+def getMaximumValues(image):
+\n\tmax_width, max_height = 0, 0
+\n\th, w, c = image.shape
+\n\tif h > max_height:
+\n\t\tmax_height = h
+\n\tif w > max_width:
+\n\t\tmax_width = w
+\n\treturn max_width, max_height

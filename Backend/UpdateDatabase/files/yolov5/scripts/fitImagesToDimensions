@@ -1,0 +1,8 @@
+def fitImageToDimensions(image, dim, functions):
+\n\tgetMaximumValues = functions["getMaximumValues"]
+\n\tresizeImage = functions["resizeImage"]
+\n\taddBorder = functions["addBorder"]
+\n\tmax_width, max_height = getMaximumValues(image)
+\n\timage = resizeImage(image, dim)
+\n\timage = addBorder(image, max_width, max_height, dim)
+\n\treturn image

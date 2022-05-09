@@ -1,0 +1,6 @@
+def preprocessingImage(image, dim, functions):
+\n\timport cv2
+\n\tfitImageToDimensions = functions["fitImageToDimensions"]
+\n\timage = fitImageToDimensions(image, dim, functions)
+\n\timage = cv2.dnn.blobFromImage(image, 1 / 255.0, dim, swapRB=True)
+\n\treturn image

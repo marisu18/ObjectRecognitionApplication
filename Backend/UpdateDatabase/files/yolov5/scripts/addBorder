@@ -1,0 +1,10 @@
+def addBorder(image, max_width, max_height, dim):
+\n\timport cv2
+\n\tHEIGHT, WIDTH = dim[0], dim[1]
+\n\th, w, c = image.shape
+\n\ttop = int(HEIGHT - h)
+\n\tbottom = 0
+\n\tleft = int(WIDTH - w)
+\n\tright = 0
+\n\timage = cv2.copyMakeBorder(image, top, bottom, left, right, cv2.BORDER_CONSTANT)
+\n\treturn image
